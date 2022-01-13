@@ -121,16 +121,14 @@ Stablo Brisi(int Element, Stablo P)
         P->L=Brisi(Element, P->L);
     else if(Element>P->El)
         P->D=Brisi(Element, P->D);
-    else
-        {
-            if((P->L && P->D)!=NULL)
+    else if((P->L && P->D)!=NULL)
                     {
                         temp=pronadiMinElement(P->D);
                         P->El=temp->El;
                         P->D=Brisi(P->El, P->D);
 
                     }
-            else
+    else
             {
                 temp=P;
                 if(P->L==NULL)
@@ -140,7 +138,7 @@ Stablo Brisi(int Element, Stablo P)
                 free(temp);
             }
 
-        }
+ 
 
         return P;
 }
